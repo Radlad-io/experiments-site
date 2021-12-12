@@ -320,6 +320,15 @@ export default function Home() {
                       Audio Waveform
                     </Link>
                   </li>
+                  <li>
+                    <Link
+                      href="/p5/05_amplitude_and_waveform"
+                      passHref
+                      scroll={false}
+                    >
+                      Amplitude Waveform
+                    </Link>
+                  </li>
                 </ul>
               </motion.article>
               <motion.article

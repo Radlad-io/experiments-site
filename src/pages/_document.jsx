@@ -32,6 +32,21 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined"
             crossOrigin="anonymous"
           ></link>
+          <Script
+            strategy="lazyOnload"
+            src={`https://www.googletagmanager.com/gtag/js?id=G-9FQ6NSKQRQ`}
+          />
+
+          <Script strategy="lazyOnload">
+            {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-9FQ6NSKQRQ', {
+                  page_path: window.location.pathname,
+                });
+            `}
+          </Script>
         </Head>
         <body>
           <Script>0</Script>

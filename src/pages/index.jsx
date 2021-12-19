@@ -107,6 +107,14 @@ export default function Home() {
                 <ul>
                   <li>
                     <Link
+                      href="https://bubble-cardinal-65d.notion.site/Lander-Game-259d5c2e192449239549158dc749caf1"
+                      passHref
+                    >
+                      A three dimensional version of Atari's 1979 Lunar Lander
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
                       href="https://www.awwwards.com/academy/course/flawless-typography-understanding-and-breaking-the-rules"
                       passHref
                     >
@@ -187,6 +195,15 @@ export default function Home() {
               <motion.article variants={articles} className={styles.block}>
                 <h2>Three.js</h2>
                 <ul>
+                  <li>
+                    <Link
+                      href="https://lander-game.kevinmerinsky.com/"
+                      passHref
+                      scroll={false}
+                    >
+                      Lander Game
+                    </Link>
+                  </li>
                   <li>
                     <Link
                       href="https://experiments-traffic-game.vercel.app/"

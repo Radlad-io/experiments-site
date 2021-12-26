@@ -122,11 +122,8 @@ export default function Home() {
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      href="https://www.awwwards.com/academy/course/impress-everyone-with-a-3d-particle-scene-starting-from-bad-models"
-                      passHref
-                    >
-                      A Three.js + Blender particle course
+                    <Link href="https://thebookofshaders.com/" passHref>
+                      Getting through the book of shaders
                     </Link>
                   </li>
                   <li>
@@ -211,6 +208,15 @@ export default function Home() {
                       scroll={false}
                     >
                       Traffic Game
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="/threejs/particle-meshes_shaders"
+                      passHref
+                      scroll={false}
+                    >
+                      Particle Meshes + Fragment Shaders
                     </Link>
                   </li>
                 </ul>

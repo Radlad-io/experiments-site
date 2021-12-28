@@ -425,6 +425,15 @@ export default function Home() {
                       Physics animation
                     </Link>
                   </li>
+                  <li>
+                    <Link
+                      href="/blender/models/forest-road"
+                      passHref
+                      scroll={false}
+                    >
+                      Forest Road Scene
+                    </Link>
+                  </li>
                 </ul>
               </motion.article>
               <motion.article

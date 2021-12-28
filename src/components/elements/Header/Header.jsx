@@ -6,7 +6,13 @@ import * as variants from "./Header.motion";
 
 import Modal from "@components/elements/Modal/Modal";
 
-export default function ReturnButton({ title, info, animate, setAnimate }) {
+export default function ReturnButton({
+  title,
+  info,
+  animate,
+  setAnimate,
+  children,
+}) {
   const [modal, setModal] = useState(false);
   return (
     <motion.div
@@ -27,17 +33,15 @@ export default function ReturnButton({ title, info, animate, setAnimate }) {
       </Link>
 
       <div className={`${styles.actions} noselect`}>
-        {title && (
-          <motion.i
-            variants={variants.actions}
-            onClick={() => {
-              setModal(!modal);
-            }}
-            className={`${styles.info} material-icons-outlined`}
-          >
-            text_snippet
-          </motion.i>
-        )}
+        <motion.i
+          variants={variants.actions}
+          onClick={() => {
+            setModal(!modal);
+          }}
+          className={`${styles.info} material-icons-outlined`}
+        >
+          text_snippet
+        </motion.i>
 
         {setAnimate && (
           <motion.i
@@ -51,7 +55,9 @@ export default function ReturnButton({ title, info, animate, setAnimate }) {
           </motion.i>
         )}
       </div>
-      <Modal title={title} info={info} isOpen={modal} />
+      <Modal title={title} info={info} isOpen={modal}>
+        {children}
+      </Modal>
     </motion.div>
   );
 }

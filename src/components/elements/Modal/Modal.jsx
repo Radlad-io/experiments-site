@@ -2,7 +2,7 @@ import styles from "./Modal.module.scss";
 import { motion } from "framer-motion";
 import * as variants from "./Modal.motion";
 
-export default function Modal({ title, info, isOpen }) {
+export default function Modal({ title, info, children, isOpen }) {
   return (
     <motion.div
       className={styles.modal}
@@ -14,6 +14,7 @@ export default function Modal({ title, info, isOpen }) {
       <motion.div className={styles.modalBg} variants={variants.modalBg}>
         <motion.h3 variants={variants.heading}>{title}</motion.h3>
         <motion.p variants={variants.info}>{info}</motion.p>
+        {children}
       </motion.div>
     </motion.div>
   );

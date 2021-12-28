@@ -1,3 +1,5 @@
+@import "../../../styles/mixins";
+
 .modal {
   position: fixed;
   width: 100vw;
@@ -10,13 +12,21 @@
     text-transform: uppercase;
     max-width: 650px;
     margin: 15px 25px;
+    @include for-phone-only {
+      font-size: 1.5rem;
+      text-align: left;
+    }
   }
   p {
     font-size: 1.125rem;
     color: black;
     max-width: 700px;
-    margin: 10px 25px;
+    margin: 10px 25px 35px;
     line-height: 1.75rem;
+    @include for-phone-only {
+      font-size: 1rem;
+      line-height: 1.5rem;
+    }
   }
   .modalBg {
     display: flex;
@@ -26,5 +36,12 @@
     width: 100vw;
     height: 100vh;
     background-color: var(--white);
+    @include for-phone-only {
+      align-items: flex-start;
+    }
+    img {
+      display: block;
+      margin: auto;
+    }
   }
 }

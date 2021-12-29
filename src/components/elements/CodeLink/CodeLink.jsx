@@ -14,11 +14,9 @@ function CodeLink({ link }) {
     >
       <p>
         💻 Project files can be found{" "}
-        <a>
-          <Link href={link} passHref>
-            here!
-          </Link>
-        </a>
+        <Link href={link} passHref>
+          here!
+        </Link>
       </p>
     </motion.div>
   );

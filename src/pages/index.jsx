@@ -234,9 +234,19 @@ export default function Home() {
                 <h2>AFrame</h2>
                 <div id="vertFlex">
                   <ul>
-                    <li>
+                    {/* <li>
                       <Link href="https://ar.uarts.edu" passHref scroll={false}>
                         Augmented Reality App
+                      </Link>
+                    </li> */}
+                    <li>
+                      <Link href="https://ar.uarts.edu" passHref scroll={false}>
+                        <a>
+                          AR Viewbook
+                          <i className={`material-icons-outlined`}>
+                            open_in_new
+                          </i>
+                        </a>
                       </Link>
                     </li>
                   </ul>

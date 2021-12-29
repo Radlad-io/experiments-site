@@ -4,7 +4,7 @@
   h1 {
     font-size: 2.5rem;
     text-transform: uppercase;
-    margin: 50px 0;
+    margin: 50px 0 0 0;
     @include for-tablet-landscape-up {
       font-size: 4rem;
     }
@@ -18,7 +18,7 @@
     font-weight: 900;
   }
   p {
-    color: var(--vlack);
+    color: var(--black);
     text-decoration: underline;
   }
   a {
@@ -26,9 +26,37 @@
     padding: 1px 0;
     margin: 1px 0;
     &:hover {
-      color: var(--gray-500);
+      color: var(--gray-00);
     }
   }
+}
+
+.legend {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 25px 0 10px;
+  padding: 0;
+  p {
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    margin-right: 25px;
+  }
+  li {
+    padding: 0;
+    margin: 10px 25px 10px 10px;
+  }
+}
+
+.wip {
+  color: var(--red-salsa);
+}
+.tutorial {
+  color: var(--mango-tango);
+}
+.demo {
+  color: var(--cg-blue);
 }
 
 .grid {
@@ -48,19 +76,15 @@
     grid-template-columns: repeat(4, 1fr);
   }
 }
+
 .block {
-  display: flex;
-  flex-direction: column;
   background-color: var(--gray-300);
-  padding: 25px;
-  color: black;
-  ol {
-    margin: 0;
-    padding: 0 20px 10px 20px;
+  color: var(--black);
+  h2 {
+    padding: 25px 25px 0 25px;
   }
   ul {
-    margin: 0;
-    padding: 0 20px 10px 20px;
+    margin: 0 0 25px 0;
   }
   li {
     a {
@@ -69,12 +93,8 @@
     }
     i {
       font-size: 1.125rem;
-      margin: 0 0 2px 8px;
+      margin: 0 0 0 8px;
     }
-  }
-  div {
-    display: flex;
-    align-items: center;
   }
   a {
     display: block;
@@ -84,25 +104,30 @@
 }
 
 .disclaimer {
-  margin: 20px -25px -25px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   background-color: var(--gray-700);
-  padding: 0 15px;
+  padding: 0 10px;
   p {
     margin-left: 10px;
     font-size: 0.85rem;
-    color: white;
+    color: var(--white);
     text-decoration: none;
     line-height: 1.35rem;
   }
-  a {
-    color: white;
-    display: inline;
-  }
   i {
     font-size: 1.25rem;
-    color: white;
+    color: var(--white);
     margin-left: 10px;
   }
+}
+
+#vertFlex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100% - 65px);
 }
 
 #current {
@@ -139,4 +164,7 @@
 
 #comingSoon {
   background-color: var(--gray-700);
+  p {
+    padding: 0 25px;
+  }
 }

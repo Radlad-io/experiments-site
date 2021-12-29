@@ -98,7 +98,7 @@ export default function Home() {
           <main className={styles.wrapper}>
             <motion.h1 variants={heading}>Experiments</motion.h1>
             <motion.ul variants={heading} className={styles.legend}>
-              <p>
+              <p className={styles.key}>
                 <b>Legend: </b>
               </p>
               <li className={styles.wip}>
@@ -194,54 +194,14 @@ export default function Home() {
                   </li>
                 </ul>
               </motion.article>
-              <motion.article
-                variants={articles}
-                className={styles.block}
-                id={styles.threejs}
-              >
-                <h2>Three.js</h2>
-                <ul>
-                  <li className={styles.wip}>
-                    <Link
-                      href="https://lander-game.kevinmerinsky.com/"
-                      passHref
-                      scroll={false}
-                    >
-                      Lander Game
-                    </Link>
-                  </li>
-                  <li className={styles.tutorial}>
-                    <Link
-                      href="https://experiments-traffic-game.vercel.app/"
-                      passHref
-                      scroll={false}
-                    >
-                      Traffic Game
-                    </Link>
-                  </li>
-                  <li className={styles.tutorial}>
-                    <Link
-                      href="/threejs/particle-meshes_shaders"
-                      passHref
-                      scroll={false}
-                    >
-                      Particle Meshes + Fragment Shaders
-                    </Link>
-                  </li>
-                </ul>
-              </motion.article>
+
               <motion.article variants={articles} className={styles.block}>
                 <h2>AFrame</h2>
                 <div id="vertFlex">
                   <ul>
-                    {/* <li>
-                      <Link href="https://ar.uarts.edu" passHref scroll={false}>
-                        Augmented Reality App
-                      </Link>
-                    </li> */}
                     <li>
                       <Link href="https://ar.uarts.edu" passHref scroll={false}>
-                        <a>
+                        <a target="_blank" rel="noreferrer">
                           AR Viewbook
                           <i className={`material-icons-outlined`}>
                             open_in_new
@@ -258,6 +218,48 @@ export default function Home() {
                   </div>
                 </div>
               </motion.article>
+              <motion.article
+                variants={articles}
+                className={styles.block}
+                id={styles.threejs}
+              >
+                <h2>Three.js</h2>
+                <ul>
+                  <li className={styles.wip}>
+                    <Link
+                      href="https://lander-game.kevinmerinsky.com"
+                      passHref
+                      scroll={false}
+                    >
+                      <a target="_blank" rel="noreferrer">
+                        Lunar Lander Game
+                        <i className={`material-icons-outlined`}>open_in_new</i>
+                      </a>
+                    </Link>
+                  </li>
+                  <li className={styles.tutorial}>
+                    <Link
+                      href="https://traffic-game.kevinmerinsky.com"
+                      passHref
+                      scroll={false}
+                    >
+                      <a target="_blank" rel="noreferrer">
+                        Traffic Game
+                        <i className={`material-icons-outlined`}>open_in_new</i>
+                      </a>
+                    </Link>
+                  </li>
+                  <li className={styles.tutorial}>
+                    <Link
+                      href="/threejs/particle-meshes_shaders"
+                      passHref
+                      scroll={false}
+                    >
+                      Particle Meshes + Fragment Shaders
+                    </Link>
+                  </li>
+                </ul>
+              </motion.article>
               <motion.article variants={articles} className={styles.block}>
                 <h2>Arduino</h2>
                 <ul>
@@ -267,7 +269,7 @@ export default function Home() {
                       passHref
                       scroll={false}
                     >
-                      <a>
+                      <a target="_blank" rel="noreferrer">
                         Slo-Mo Video Booth
                         <i className={`material-icons-outlined`}>open_in_new</i>
                       </a>
@@ -279,13 +281,13 @@ export default function Home() {
                 <h2>Electron</h2>
                 <div id="vertFlex">
                   <ul>
-                    <li>
+                    <li className={styles.wip}>
                       <Link
                         href="https://github.com/Radlad-io/RadBooth-App"
                         passHref
                         scroll={false}
                       >
-                        <a>
+                        <a target="_blank" rel="noreferrer">
                           Application
                           <i className={`material-icons-outlined`}>
                             open_in_new
@@ -323,19 +325,19 @@ export default function Home() {
                       passHref
                       scroll={false}
                     >
-                      <a>
+                      <a target="_blank" rel="noreferrer">
                         SoundBot
                         <i className={`material-icons-outlined`}>open_in_new</i>
                       </a>
                     </Link>
                   </li>
-                  <li>
+                  <li className={styles.wip}>
                     <Link
                       href="https://github.com/Radlad-io/radbooth-service"
                       passHref
                       scroll={false}
                     >
-                      <a>
+                      <a target="_blank" rel="noreferrer">
                         Service
                         <i className={`material-icons-outlined`}>open_in_new</i>
                       </a>

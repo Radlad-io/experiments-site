@@ -153,43 +153,21 @@ export default function Home() {
                 <h2>Framer Motion</h2>
                 <ul>
                   <li className={styles.demo}>
-                    <Link href="/framer-motion/001" passHref scroll={false}>
+                    <Link
+                      href="/framer-motion/orchestration-state"
+                      passHref
+                      scroll={false}
+                    >
                       Orchestration + State
                     </Link>
                   </li>
                   <li className={styles.demo}>
-                    <Link href="/framer-motion/001" passHref scroll={false}>
-                      Adding Masks
-                    </Link>
-                  </li>
-                  <li className={styles.demo}>
-                    <Link href="/framer-motion/001" passHref scroll={false}>
-                      Keyframes
-                    </Link>
-                  </li>
-                  <li className={styles.demo}>
-                    <Link href="/framer-motion/002" passHref scroll={false}>
-                      Intersection Observer
-                    </Link>
-                  </li>
-                  <li className={styles.demo}>
-                    <Link href="/framer-motion/003" passHref scroll={false}>
-                      Parallax effect
-                    </Link>
-                  </li>
-                  <li className={styles.demo}>
-                    <Link href="/framer-motion/003" passHref scroll={false}>
-                      Custom cursor
-                    </Link>
-                  </li>
-                  <li className={styles.demo}>
-                    <Link href="/framer-motion/001" passHref scroll={false}>
-                      Drag + Drop
-                    </Link>
-                  </li>
-                  <li className={styles.demo}>
-                    <Link href="/framer-motion/001" passHref scroll={false}>
-                      Shared layout
+                    <Link
+                      href="/framer-motion/drag-animation"
+                      passHref
+                      scroll={false}
+                    >
+                      Drag Animation
                     </Link>
                   </li>
                 </ul>

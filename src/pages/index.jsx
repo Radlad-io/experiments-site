@@ -224,6 +224,19 @@ export default function Home() {
                       </a>
                     </Link>
                   </li>
+                  0
+                  <li className={styles.wip}>
+                    <Link
+                      href="https://github.com/Black-Dot-Studio/three-zapworks"
+                      passHref
+                      scroll={false}
+                    >
+                      <a target="_blank" rel="noreferrer">
+                        Advanced AR Application
+                        <i className={`material-icons-outlined`}>open_in_new</i>
+                      </a>
+                    </Link>
+                  </li>
                   <li className={styles.tutorial}>
                     <Link
                       href="https://traffic-game.kevinmerinsky.com"
@@ -395,13 +408,15 @@ export default function Home() {
                   </div>
                 </div>
               </motion.article>
-              <motion.article
-                variants={articles}
-                className={styles.block}
-                id={styles.comingSoon}
-              >
+              <motion.article variants={articles} className={styles.block}>
                 <h2>TensorFlow.JS</h2>
-                <p>Coming soon.</p>
+                <ul>
+                  <li className={styles.demo}>
+                    <Link href="/tensorflow/face-mesh" passHref scroll={false}>
+                      Face Mesh
+                    </Link>
+                  </li>
+                </ul>
               </motion.article>
               <motion.article variants={articles} className={styles.block}>
                 <h2>P5.JS</h2>

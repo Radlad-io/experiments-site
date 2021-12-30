@@ -20,5 +20,3 @@ export default function PrinterDesign() {
     </>
   );
 }
-
-//https://a360.co/3xHTPX2

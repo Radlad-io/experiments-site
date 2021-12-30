@@ -59,6 +59,7 @@ export default function DragAnimation() {
           <div className={styles.output}>
             <p>
               <b>Mouse Drag Start: </b>
+              <br />
               <motion.span
                 onAnimationComplete={() => {
                   setStartChange(false);
@@ -78,6 +79,7 @@ export default function DragAnimation() {
             </p>
             <p>
               <b>Mouse Drag End: </b>
+              <br />
               <motion.span
                 onAnimationComplete={() => {
                   setEndChange(false);

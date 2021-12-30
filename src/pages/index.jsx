@@ -170,6 +170,15 @@ export default function Home() {
                       Drag Animation
                     </Link>
                   </li>
+                  <li className={styles.demo}>
+                    <Link
+                      href="/framer-motion/scroll-reveal"
+                      passHref
+                      scroll={false}
+                    >
+                      Scroll Reveal
+                    </Link>
+                  </li>
                 </ul>
               </motion.article>
 
@@ -266,7 +275,7 @@ export default function Home() {
                         scroll={false}
                       >
                         <a target="_blank" rel="noreferrer">
-                          Application
+                          RadBooth Application
                           <i className={`material-icons-outlined`}>
                             open_in_new
                           </i>
@@ -304,7 +313,7 @@ export default function Home() {
                       scroll={false}
                     >
                       <a target="_blank" rel="noreferrer">
-                        SoundBot
+                        Discord SoundBot
                         <i className={`material-icons-outlined`}>open_in_new</i>
                       </a>
                     </Link>
@@ -316,7 +325,7 @@ export default function Home() {
                       scroll={false}
                     >
                       <a target="_blank" rel="noreferrer">
-                        Service
+                        RadBooth Service
                         <i className={`material-icons-outlined`}>open_in_new</i>
                       </a>
                     </Link>
@@ -353,7 +362,7 @@ export default function Home() {
                     </li>
                     <li className={styles.tutorial}>
                       <Link href="/webxr/005" passHref scroll={false}>
-                        Model loading
+                        Model Loading
                       </Link>
                     </li>
                     <li className={styles.tutorial}>
@@ -363,17 +372,17 @@ export default function Home() {
                     </li>
                     <li className={styles.tutorial}>
                       <Link href="/webxr/007" passHref scroll={false}>
-                        Touch gestures
+                        Touch Gestures
                       </Link>
                     </li>
                     <li className={styles.tutorial}>
                       <Link href="/webxr/008" passHref scroll={false}>
-                        Hit testing (reticle only)
+                        Hit Testing (reticle only)
                       </Link>
                     </li>
                     <li className={styles.tutorial}>
                       <Link href="/webxr/009" passHref scroll={false}>
-                        Hit testing
+                        Hit Testing
                       </Link>
                     </li>
                   </ul>
@@ -449,7 +458,7 @@ export default function Home() {
                 <ul>
                   <li className={styles.tutorial}>
                     <Link href="/blender/001" passHref scroll={false}>
-                      Physics animation
+                      Physics Animation
                     </Link>
                   </li>
                   <li className={styles.tutorial}>
@@ -485,7 +494,22 @@ export default function Home() {
                   </li>
                   <li>
                     <Link href="/cad/radbooth" passHref scroll={false}>
-                      Radbooth
+                      RadBooth
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/cad/dongle-defender" passHref scroll={false}>
+                      Dongle Defender
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/cad/dragonberry" passHref scroll={false}>
+                      DragonBerry
+                    </Link>
+                  </li>
+                  <li>
+                    <Link href="/cad/360-gopro-rig" passHref scroll={false}>
+                      360 GoPro Rig
                     </Link>
                   </li>
                 </ul>

@@ -224,7 +224,6 @@ export default function Home() {
                       </a>
                     </Link>
                   </li>
-                  0
                   <li className={styles.wip}>
                     <Link
                       href="https://github.com/Black-Dot-Studio/three-zapworks"

@@ -12,10 +12,12 @@ export default function Animation001() {
     <>
       <Header
         title="Exploring Framer Motion"
-        info="Framer Motion is a powerful motion library for React. I've created a few demos to become more familiar with it. This one is focused on choregraphing different elements and reacting to state change. Being a react based library, Framer Motion allows for some advanced application animation. Notice the full page transistions I've added to the entire site."
+        info="Framer Motion is a powerful motion library for React. I've created a few demos to become more familiar with it. This one is focused on choregraphing different elements and reacting to state change. Being a react based library, Framer Motion allows for some advanced application animations. Notice the full page transistions I've added to the entire site."
         animate={animate}
         setAnimate={setAnimate}
-      />
+      >
+        <CodeLink link="https://github.com/Radlad-io/experiments-site/blob/main/src/pages/framer-motion/orchestration-state/index.jsx" />
+      </Header>
       <motion.div
         className={styles.wrapper}
         initial="inital"
@@ -103,7 +105,6 @@ export default function Animation001() {
           <motion.p variants={variants.cite}>Kurt Vonnegut</motion.p>
         </div>
       </motion.div>
-      <CodeLink link="https://github.com/Radlad-io/experiments/tree/main/site/src/pages/framer-motion/001" />
     </>
   );
 }

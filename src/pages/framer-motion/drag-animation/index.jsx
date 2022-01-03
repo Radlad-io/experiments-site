@@ -16,8 +16,10 @@ export default function DragAnimation() {
     <>
       <Header
         title="Exploring Framer Motion"
-        info="Framer Motion is a powerful motion library for React. I've created a few demos to become more familiar with it. This one is focused user input to drag elements. Being a React based library, Framer Motion allows for some advanced application animation. Notice the full page transistions I've added to the entire site."
-      />
+        info="Framer Motion is a powerful motion library for React. I've created a few demos to become more familiar with it. This one is focused user input to drag elements. Being a React based library, Framer Motion allows for advanced application animations. Notice the full page transistions I've added to the entire site."
+      >
+        <CodeLink link="https://github.com/Radlad-io/experiments-site/blob/main/src/pages/framer-motion/drag-animation/index.jsx" />
+      </Header>
       <motion.div
         className={styles.wrapper}
         initial={{ opacity: 0, trasition: { duration: 1 } }}
@@ -100,7 +102,6 @@ export default function DragAnimation() {
           </div>
         </motion.div>
       </motion.div>
-      <CodeLink link="https://github.com/Radlad-io/experiments/tree/main/site/src/pages/framer-motion/001" />
     </>
   );
 }

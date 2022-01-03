@@ -1,5 +1,6 @@
 import styles from "./index.module.scss";
 import Header from "@components/elements/Header/Header";
+import CodeLink from "@components/elements/CodeLink/CodeLink";
 import React, { useRef, useEffect } from "react";
 import * as tf from "@tensorflow/tfjs";
 import * as facemesh from "@tensorflow-models/face-landmarks-detection";
@@ -58,8 +59,10 @@ export default function FaceMesh() {
     <>
       <Header
         title="Tensorflow Face Mesh"
-        info="This was an open source FDM 3d printer design that I was working on for fun. At the time open source machines all seemed to prioritize low cost which presented quality issues. This machine was being designed as a middle ground between high end machines and low cost machines. A surge of new 3d printer companies caused me to halt this project. Valuable experience in CAD was gained."
-      />
+        info="The intention of this experiment is to explore the capabilities of Tensorflow, a powerful machine learning library. Using the predefined facemech model, this example uses your web camera to detect 468 face landmarks and then draws them in the adjacent canvas."
+      >
+        <CodeLink link="https://github.com/Radlad-io/experiments-site/blob/main/src/pages/tensorflow/face-mesh/index.js" />
+      </Header>
       <div className={styles.wrapper}>
         <div>
           <Webcam

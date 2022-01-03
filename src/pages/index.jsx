@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 
 import Container from "@components/layout/Container/Container";
 import Layout from "@components/utility/Metadata";
+
 import router from "next/router";
 
 const pageWrapper = {
@@ -205,6 +206,33 @@ export default function Home() {
                   </div>
                 </div>
               </motion.article>
+              <motion.article variants={articles} className={styles.block}>
+                <h2>Electron</h2>
+                <div id="vertFlex">
+                  <ul>
+                    <li className={styles.wip}>
+                      <Link
+                        href="https://github.com/Radlad-io/RadBooth-App"
+                        passHref
+                        scroll={false}
+                      >
+                        <a target="_blank" rel="noreferrer">
+                          RadBooth Application
+                          <i className={`material-icons-outlined`}>
+                            open_in_new
+                          </i>
+                        </a>
+                      </Link>
+                    </li>
+                  </ul>
+                  <div className={styles.disclaimer}>
+                    <i className={`material-icons-outlined`}>
+                      report_gmailerrorred
+                    </i>
+                    <p>Requires special hardware</p>
+                  </div>
+                </div>
+              </motion.article>
               <motion.article
                 variants={articles}
                 className={styles.block}
@@ -254,7 +282,39 @@ export default function Home() {
                       passHref
                       scroll={false}
                     >
-                      Particle Meshes + Fragment Shaders
+                      Particle Meshes + Shaders
+                    </Link>
+                  </li>
+                </ul>
+              </motion.article>
+              <motion.article
+                variants={articles}
+                className={styles.block}
+                id={styles.nodejs}
+              >
+                <h2>Blender</h2>
+                <ul>
+                  <li className={styles.tutorial}>
+                    <Link href="/blender/001" passHref scroll={false}>
+                      Physics Animation
+                    </Link>
+                  </li>
+                  <li className={styles.tutorial}>
+                    <Link
+                      href="/blender/models/forest-road"
+                      passHref
+                      scroll={false}
+                    >
+                      Forest Road Scene
+                    </Link>
+                  </li>
+                  <li className={styles.tutorial}>
+                    <Link
+                      href="/blender/models/forest-road-baked"
+                      passHref
+                      scroll={false}
+                    >
+                      Forest Road Baked
                     </Link>
                   </li>
                 </ul>
@@ -275,33 +335,6 @@ export default function Home() {
                     </Link>
                   </li>
                 </ul>
-              </motion.article>
-              <motion.article variants={articles} className={styles.block}>
-                <h2>Electron</h2>
-                <div id="vertFlex">
-                  <ul>
-                    <li className={styles.wip}>
-                      <Link
-                        href="https://github.com/Radlad-io/RadBooth-App"
-                        passHref
-                        scroll={false}
-                      >
-                        <a target="_blank" rel="noreferrer">
-                          RadBooth Application
-                          <i className={`material-icons-outlined`}>
-                            open_in_new
-                          </i>
-                        </a>
-                      </Link>
-                    </li>
-                  </ul>
-                  <div className={styles.disclaimer}>
-                    <i className={`material-icons-outlined`}>
-                      report_gmailerrorred
-                    </i>
-                    <p>Requires special hardware</p>
-                  </div>
-                </div>
               </motion.article>
               <motion.article
                 variants={articles}
@@ -353,23 +386,8 @@ export default function Home() {
                 <div id={styles.vertFlex}>
                   <ul>
                     <li className={styles.tutorial}>
-                      <Link href="/webxr/001" passHref scroll={false}>
-                        Basic Scene
-                      </Link>
-                    </li>
-                    <li className={styles.tutorial}>
-                      <Link href="/webxr/002" passHref scroll={false}>
-                        Basic Scene + WebXR
-                      </Link>
-                    </li>
-                    <li className={styles.tutorial}>
-                      <Link href="/webxr/003" passHref scroll={false}>
-                        Additional Objects
-                      </Link>
-                    </li>
-                    <li className={styles.tutorial}>
                       <Link href="/webxr/004" passHref scroll={false}>
-                        Additional Objects + Animation
+                        Objects + Animation
                       </Link>
                     </li>
                     <li className={styles.tutorial}>
@@ -385,11 +403,6 @@ export default function Home() {
                     <li className={styles.tutorial}>
                       <Link href="/webxr/007" passHref scroll={false}>
                         Touch Gestures
-                      </Link>
-                    </li>
-                    <li className={styles.tutorial}>
-                      <Link href="/webxr/008" passHref scroll={false}>
-                        Hit Testing (reticle only)
                       </Link>
                     </li>
                     <li className={styles.tutorial}>
@@ -422,29 +435,6 @@ export default function Home() {
                 <ul>
                   <li className={styles.tutorial}>
                     <Link
-                      href="/p5/01_simple-canvas-drawing"
-                      passHref
-                      scroll={false}
-                    >
-                      Simple Canvas
-                    </Link>
-                  </li>
-                  <li className={styles.tutorial}>
-                    <Link
-                      href="/p5/02_input-interactions"
-                      passHref
-                      scroll={false}
-                    >
-                      User Interactions
-                    </Link>
-                  </li>
-                  <li className={styles.tutorial}>
-                    <Link href="/p5/03_audio_input" passHref scroll={false}>
-                      Audio Input
-                    </Link>
-                  </li>
-                  <li className={styles.tutorial}>
-                    <Link
                       href="/p5/04_static_audio_waveform"
                       passHref
                       scroll={false}
@@ -459,29 +449,6 @@ export default function Home() {
                       scroll={false}
                     >
                       Amplitude Waveform
-                    </Link>
-                  </li>
-                </ul>
-              </motion.article>
-              <motion.article
-                variants={articles}
-                className={styles.block}
-                id={styles.nodejs}
-              >
-                <h2>Blender</h2>
-                <ul>
-                  <li className={styles.tutorial}>
-                    <Link href="/blender/001" passHref scroll={false}>
-                      Physics Animation
-                    </Link>
-                  </li>
-                  <li className={styles.tutorial}>
-                    <Link
-                      href="/blender/models/forest-road"
-                      passHref
-                      scroll={false}
-                    >
-                      Forest Road Scene
                     </Link>
                   </li>
                 </ul>

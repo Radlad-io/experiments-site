@@ -43,14 +43,17 @@ export const boxVariant = {
   },
 };
 
+// TODO: Fix X scrolling
 export default function ScrollReveal() {
   const [animate, setAnimate] = useState(true);
   return (
     <>
       <Header
         title="Exploring Framer Motion"
-        info="Framer Motion is a powerful motion library for React. I've created a few demos to become more familiar with it. This one is focused on hooking into the intersection observer to trigger an animation when an object is in the viewport. Being a react based library, Framer Motion allows for some advanced application animation. Notice the full page transistions I've added to the entire site."
-      />
+        info="Framer Motion is a powerful motion library for React. I've created a few demos to become more familiar with it. This one is focused on hooking into the intersection observer to trigger an animation when an object is in the viewport. Being a react based library, Framer Motion allows for some advanced application animations. Notice the full page transistions I've added to the entire site."
+      >
+        <CodeLink link="https://github.com/Radlad-io/experiments-site/blob/main/src/pages/framer-motion/scroll-reveal/index.jsx" />
+      </Header>
       <motion.div
         className={styles.wrapper}
         variants={wrapperVariant}
@@ -168,7 +171,6 @@ export default function ScrollReveal() {
           </motion.div>
         </div>
       </motion.div>
-      <CodeLink link="https://github.com/Radlad-io/experiments/tree/main/site/src/pages/framer-motion/001" />
     </>
   );
 }

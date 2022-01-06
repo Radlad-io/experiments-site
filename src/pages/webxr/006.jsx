@@ -27,10 +27,10 @@ export default function Blender001() {
       </Header>
       <iframe
         className={styles.frame}
-        src="http://webxr.kevinmerinsky.com/5-model_animated.html"
+        src="https://webxr.kevinmerinsky.com/5-model_animated.html"
       ></iframe>
       <div className={styles.launch}>
-        <a href="http://webxr.kevinmerinsky.com/5-model_animated.html">
+        <a href="https://webxr.kevinmerinsky.com/5-model_animated.html">
           Launch WebXR Application
           <i className={`${styles.external} material-icons-outlined`}>
             open_in_new

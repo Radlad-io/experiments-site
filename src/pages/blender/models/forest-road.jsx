@@ -3,7 +3,7 @@ import React, { Suspense, useState, useRef, useEffect } from "react";
 import Image from "next/image";
 import * as THREE from "three";
 import { Canvas, useThree } from "@react-three/fiber";
-import { useGLTF, useHelper } from "@react-three/drei";
+import { useGLTF } from "@react-three/drei";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 import Header from "@components/elements/Header/Header";

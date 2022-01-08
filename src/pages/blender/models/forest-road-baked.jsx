@@ -4,7 +4,12 @@ import Image from "next/image";
 import * as THREE from "three";
 import { motion } from "framer-motion";
 import { Canvas, useThree } from "@react-three/fiber";
-import { useGLTF, useTexture, useHelper } from "@react-three/drei";
+import {
+  useGLTF,
+  useTexture,
+  useHelper,
+  MeshWobbleMaterial,
+} from "@react-three/drei";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 import Header from "@components/elements/Header/Header";
@@ -272,7 +277,13 @@ function Model({ ...props }) {
           geometry={nodes.Cylinder002_1.geometry}
           material={nodes.Cylinder002_1.material}
         >
-          <meshBasicMaterial map={bakedTexture} map-flipY={false} />
+          <MeshWobbleMaterial
+            attach="material"
+            map={bakedTexture}
+            map-flipY={false}
+            factor={0.15}
+            speed={1.5}
+          />
         </mesh>
       </group>
       <mesh
@@ -281,7 +292,13 @@ function Model({ ...props }) {
         position={[2.26, 0.98, -0.1]}
         rotation={[0.06, -0.15, 0.22]}
       >
-        <meshBasicMaterial map={bakedTexture} map-flipY={false} />
+        <MeshWobbleMaterial
+          attach="material"
+          map={bakedTexture}
+          map-flipY={false}
+          factor={0.2}
+          speed={1.5}
+        />
       </mesh>
       <group position={[-0.87, 1.22, -2.83]} rotation={[-0.2, 0.61, 0.3]}>
         <mesh
@@ -294,7 +311,13 @@ function Model({ ...props }) {
           geometry={nodes.Cylinder003_1.geometry}
           material={nodes.Cylinder003_1.material}
         >
-          <meshBasicMaterial map={bakedTexture} map-flipY={false} />
+          <MeshWobbleMaterial
+            attach="material"
+            map={bakedTexture}
+            map-flipY={false}
+            factor={0.2}
+            speed={1}
+          />
         </mesh>
       </group>
       <group position={[2.3, 1.33, -1.42]} rotation={[0.06, 1.13, 0.04]}>
@@ -308,7 +331,13 @@ function Model({ ...props }) {
           geometry={nodes.Cylinder004_1.geometry}
           material={nodes.Cylinder004_1.material}
         >
-          <meshBasicMaterial map={bakedTexture} map-flipY={false} />
+          <MeshWobbleMaterial
+            attach="material"
+            map={bakedTexture}
+            map-flipY={false}
+            factor={0.25}
+            speed={2.25}
+          />
         </mesh>
       </group>
       <mesh
@@ -317,7 +346,13 @@ function Model({ ...props }) {
         position={[-3.44, 1.08, 1.7]}
         rotation={[Math.PI, -0.88, Math.PI]}
       >
-        <meshBasicMaterial map={bakedTexture} map-flipY={false} />
+        <MeshWobbleMaterial
+          attach="material"
+          map={bakedTexture}
+          map-flipY={false}
+          factor={0.15}
+          speed={1}
+        />
       </mesh>
       <mesh
         geometry={nodes.Tree005.geometry}
@@ -325,7 +360,13 @@ function Model({ ...props }) {
         position={[-3.34, 1.22, -1.74]}
         rotation={[-0.92, -1.48, -0.85]}
       >
-        <meshBasicMaterial map={bakedTexture} map-flipY={false} />
+        <MeshWobbleMaterial
+          attach="material"
+          map={bakedTexture}
+          map-flipY={false}
+          factor={0.15}
+          speed={1}
+        />
       </mesh>
       <group position={[-2.24, 1.02, 1.45]} rotation={[-0.01, -0.49, 0.08]}>
         <mesh
@@ -338,7 +379,13 @@ function Model({ ...props }) {
           geometry={nodes.Cylinder001_1.geometry}
           material={nodes.Cylinder001_1.material}
         >
-          <meshBasicMaterial map={bakedTexture} map-flipY={false} />
+          <MeshWobbleMaterial
+            attach="material"
+            map={bakedTexture}
+            map-flipY={false}
+            factor={0.25}
+            speed={2}
+          />
         </mesh>
       </group>
       <mesh
@@ -430,7 +477,9 @@ export default function ForestRoad() {
           orthographic
           camera={{ zoom: 105, position: [5, 8, 7] }}
         >
-          <color attach="background" args={["#2a274d"]} />
+          <color attach="background" args={["#ffffff"]} />
+          <ambientLight intensity={1} />
+          {/* <directionalLight color="red" position={[0, 0, 5]} /> */}
           <CameraController enableDamping={true} dampingFactor={0.5} />
           <Suspense fallback={null}>
             <Model />

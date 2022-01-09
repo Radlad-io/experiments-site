@@ -277,13 +277,7 @@ function Model({ ...props }) {
           geometry={nodes.Cylinder002_1.geometry}
           material={nodes.Cylinder002_1.material}
         >
-          <MeshWobbleMaterial
-            attach="material"
-            map={bakedTexture}
-            map-flipY={false}
-            factor={0.15}
-            speed={1.5}
-          />
+          <meshBasicMaterial map={bakedTexture} map-flipY={false} />
         </mesh>
       </group>
       <mesh
@@ -292,13 +286,7 @@ function Model({ ...props }) {
         position={[2.26, 0.98, -0.1]}
         rotation={[0.06, -0.15, 0.22]}
       >
-        <MeshWobbleMaterial
-          attach="material"
-          map={bakedTexture}
-          map-flipY={false}
-          factor={0.2}
-          speed={1.5}
-        />
+        <meshBasicMaterial map={bakedTexture} map-flipY={false} />
       </mesh>
       <group position={[-0.87, 1.22, -2.83]} rotation={[-0.2, 0.61, 0.3]}>
         <mesh
@@ -311,13 +299,7 @@ function Model({ ...props }) {
           geometry={nodes.Cylinder003_1.geometry}
           material={nodes.Cylinder003_1.material}
         >
-          <MeshWobbleMaterial
-            attach="material"
-            map={bakedTexture}
-            map-flipY={false}
-            factor={0.2}
-            speed={1}
-          />
+          <meshBasicMaterial map={bakedTexture} map-flipY={false} />
         </mesh>
       </group>
       <group position={[2.3, 1.33, -1.42]} rotation={[0.06, 1.13, 0.04]}>
@@ -331,13 +313,7 @@ function Model({ ...props }) {
           geometry={nodes.Cylinder004_1.geometry}
           material={nodes.Cylinder004_1.material}
         >
-          <MeshWobbleMaterial
-            attach="material"
-            map={bakedTexture}
-            map-flipY={false}
-            factor={0.25}
-            speed={2.25}
-          />
+          <meshBasicMaterial map={bakedTexture} map-flipY={false} />
         </mesh>
       </group>
       <mesh
@@ -346,13 +322,7 @@ function Model({ ...props }) {
         position={[-3.44, 1.08, 1.7]}
         rotation={[Math.PI, -0.88, Math.PI]}
       >
-        <MeshWobbleMaterial
-          attach="material"
-          map={bakedTexture}
-          map-flipY={false}
-          factor={0.15}
-          speed={1}
-        />
+        <meshBasicMaterial map={bakedTexture} map-flipY={false} />
       </mesh>
       <mesh
         geometry={nodes.Tree005.geometry}
@@ -360,13 +330,7 @@ function Model({ ...props }) {
         position={[-3.34, 1.22, -1.74]}
         rotation={[-0.92, -1.48, -0.85]}
       >
-        <MeshWobbleMaterial
-          attach="material"
-          map={bakedTexture}
-          map-flipY={false}
-          factor={0.15}
-          speed={1}
-        />
+        <meshBasicMaterial map={bakedTexture} map-flipY={false} />
       </mesh>
       <group position={[-2.24, 1.02, 1.45]} rotation={[-0.01, -0.49, 0.08]}>
         <mesh
@@ -379,13 +343,14 @@ function Model({ ...props }) {
           geometry={nodes.Cylinder001_1.geometry}
           material={nodes.Cylinder001_1.material}
         >
-          <MeshWobbleMaterial
+          <meshBasicMaterial map={bakedTexture} map-flipY={false} />
+          {/* <MeshWobbleMaterial
             attach="material"
             map={bakedTexture}
             map-flipY={false}
             factor={0.25}
             speed={2}
-          />
+          /> */}
         </mesh>
       </group>
       <mesh

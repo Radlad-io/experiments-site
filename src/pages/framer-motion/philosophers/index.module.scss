@@ -14,36 +14,8 @@
   width: 100vw;
   margin: 0;
   padding: 0;
+  background-color: rgb(196, 29, 29);
 }
 
-.drag {
-  display: flex;
-  padding: 10px;
-  justify-content: center;
-  align-items: center;
-  background-color: black;
-  width: 100px;
-  height: 100px;
-  border-radius: 5px;
-  p {
-    font-size: 0.875rem;
-    text-decoration: none;
-    color: white;
-  }
-}
-
-.restraint {
-  background-color: var(--gray-300);
-  padding: 200px;
-  border-radius: 5px;
-}
-
-.output {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  max-width: 500px;
-  p {
-    margin: 20px;
-  }
+.flex img {
 }

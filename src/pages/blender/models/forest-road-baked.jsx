@@ -8,6 +8,9 @@ import {
   useGLTF,
   useTexture,
   useHelper,
+  Environment,
+  MeshReflectorMaterial,
+  Text,
   MeshWobbleMaterial,
 } from "@react-three/drei";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
@@ -36,7 +39,14 @@ function Model({ ...props }) {
       : "https://experiments.kevinmerinsky.com/models/forest-road-baked.glb"
   );
   return (
-    <group ref={group} {...props} dispose={null} position={[0, -1, 0]}>
+    <group
+      ref={group}
+      {...props}
+      dispose={null}
+      position={[0, -1, 0]}
+      castShadow
+      receiveShadow
+    >
       <mesh geometry={nodes.Terrain.geometry} material={materials.Ground}>
         <meshBasicMaterial map={bakedTexture} map-flipY={false} />
       </mesh>
@@ -365,29 +375,8 @@ function Model({ ...props }) {
   );
 }
 
-const Light = () => {
-  const ref = useRef();
-  useHelper(ref, THREE.DirectionalLightHelper, 1);
-
-  return (
-    <>
-      <ambientLight intensity={1.5} />
-      <directionalLight
-        ref={ref}
-        color={"#ffffff"}
-        intensity={0.75}
-        position={[-4, 2.5, -4]}
-        shadow-mapSize-width={1024}
-        shadow-mapSize-height={1024}
-        castShadow
-      />
-    </>
-  );
-};
-
 const CameraController = () => {
   const { camera, gl } = useThree();
-  // camera.position.set(5, 5, 7);
   useEffect(() => {
     const renderTarget = document.querySelector(".webgl");
     window.addEventListener("resize", () => {
@@ -396,7 +385,7 @@ const CameraController = () => {
     });
     const controls = new OrbitControls(camera, gl.domElement);
     controls.minDistance = 1;
-    controls.maxDistance = 20;
+    controls.maxDistance = 25;
     controls.enabled = true;
     return () => {
       controls.dispose();
@@ -439,15 +428,54 @@ export default function ForestRoad() {
         <Canvas
           style={{ width: "100vw", height: "100vh" }}
           dpr={[1, 2]}
-          orthographic
-          camera={{ zoom: 105, position: [5, 8, 7] }}
+          shadows
+          gl={{ alpha: false }}
+          camera={{ fov: 30, position: [16, 8, 16] }}
         >
+          <directionalLight
+            castShadow
+            intensity={1}
+            position={[10, 6, 6]}
+            shadow-mapSize={[1024, 1024]}
+            color="#fff"
+          >
+            <orthographicCamera
+              attach="shadow-camera"
+              left={-20}
+              right={20}
+              top={20}
+              bottom={-20}
+            />
+          </directionalLight>
           <color attach="background" args={["#ffffff"]} />
-          <ambientLight intensity={1} />
-          {/* <directionalLight color="red" position={[0, 0, 5]} /> */}
           <CameraController enableDamping={true} dampingFactor={0.5} />
+          <fog attach="fog" args={["#ffffff", 24, 30]} />
           <Suspense fallback={null}>
+            <Text
+              fontSize={0.75}
+              color="#ddd"
+              position={[-4, 3.5, 0]}
+              rotation={[-Math.PI / 2, Math.PI / 2, Math.PI / 2]}
+            >
+              {"Forest Road Baked"}
+            </Text>
+            <mesh position={[0, -1.05, 0]} rotation={[-Math.PI / 2, 0, 0]}>
+              <planeGeometry args={[50, 50]} />
+              <MeshReflectorMaterial
+                blur={[400, 100]}
+                resolution={4096}
+                mixBlur={1}
+                mixStrength={2.5}
+                depthScale={2}
+                minDepthThreshold={0.85}
+                color="#999"
+                distortion={1}
+                metalness={0.6}
+                roughness={0.5}
+              />
+            </mesh>
             <Model />
+            <Environment preset="dawn" />
           </Suspense>
         </Canvas>
       </motion.div>

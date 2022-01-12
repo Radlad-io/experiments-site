@@ -1,17 +1,11 @@
 import styles from "./index.module.scss";
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import * as variants from "@motion/framer-motion/001.motion";
 
 import Header from "@components/elements/Header/Header";
 import CodeLink from "@components/elements/CodeLink/CodeLink.jsx";
 
 export default function DragAnimation() {
-  const [startChange, setStartChange] = useState(false);
-  const [endChange, setEndChange] = useState(false);
-  const [dragStart, setPositionStart] = useState([0, 0]);
-  const [dragEnd, setPositionEnd] = useState([0, 0]);
-
   return (
     <>
       <Header
@@ -26,7 +20,16 @@ export default function DragAnimation() {
         animate={{ opacity: 1, trasition: { duration: 3 } }}
         exit={{ opacity: 0, trasition: { duration: 1 } }}
       >
-        <motion.div className={styles.flex}></motion.div>
+        <motion.div className={styles.flex}>
+          <img
+            className={styles.profileImg}
+            src="http://localhost:3000/images/philosophers/svg/Kierkegaard.svg"
+          ></img>
+          <p>
+            People demand freedom of speech as a compensation for the freedom of
+            thought which they seldom use.
+          </p>
+        </motion.div>
       </motion.div>
     </>
   );

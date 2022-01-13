@@ -11,6 +11,7 @@ import {
   Environment,
   MeshReflectorMaterial,
   Text,
+  Html,
   MeshWobbleMaterial,
 } from "@react-three/drei";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
@@ -450,7 +451,13 @@ export default function ForestRoad() {
           <color attach="background" args={["#ffffff"]} />
           <CameraController enableDamping={true} dampingFactor={0.5} />
           <fog attach="fog" args={["#ffffff", 24, 30]} />
-          <Suspense fallback={null}>
+          <Suspense
+            fallback={
+              <Html fullscreen>
+                <span className="loading">Loading...</span>
+              </Html>
+            }
+          >
             <Text
               fontSize={0.75}
               color="#ddd"

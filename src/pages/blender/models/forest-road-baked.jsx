@@ -12,6 +12,7 @@ import {
   MeshReflectorMaterial,
   Html,
   MeshWobbleMaterial,
+  MeshDistortMaterial,
 } from "@react-three/drei";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
@@ -41,10 +42,10 @@ function Model({ ...props }) {
   );
   return (
     <group
+      position={[0, -1, 0]}
       ref={group}
       {...props}
       dispose={null}
-      position={[0, -1, 0]}
       castShadow
       receiveShadow
     >
@@ -386,7 +387,8 @@ const CameraController = () => {
     });
     const controls = new OrbitControls(camera, gl.domElement);
     controls.minDistance = 1;
-    controls.maxDistance = 25;
+    controls.maxDistance = 30;
+    controls.min;
     controls.enabled = true;
     return () => {
       controls.dispose();
@@ -399,7 +401,7 @@ export default function ForestRoad() {
 
   return (
     <>
-      {/* <Header info="" recycle>
+      <Header info="" recycle>
         <h3>Exploring Blender</h3>
         <p>
           This is an exploration of how to model and light in Blender. Scenes
@@ -419,8 +421,8 @@ export default function ForestRoad() {
           </figcaption>
         </figure>
         <CodeLink link="https://github.com/Radlad-io/experiments/tree/main/site/src/pages/blender/models/blender_files/forest-road" />
-      </Header> */}
-      <Loading />
+      </Header>
+
       <motion.div
         className="webgl"
         initial={{ opacity: 0 }}
@@ -432,26 +434,8 @@ export default function ForestRoad() {
           dpr={[1, 2]}
           shadows
           gl={{ alpha: false }}
-          camera={{ fov: 30, position: [16, 8, 16] }}
+          camera={{ fov: 30, position: [16, 16, 16] }}
         >
-          <directionalLight
-            castShadow
-            intensity={1}
-            position={[10, 6, 6]}
-            shadow-mapSize={[1024, 1024]}
-            color="#fff"
-          >
-            <orthographicCamera
-              attach="shadow-camera"
-              left={-20}
-              right={20}
-              top={20}
-              bottom={-20}
-            />
-          </directionalLight>
-          <color attach="background" args={["#dddddd"]} />
-          <CameraController enableDamping={true} dampingFactor={0.5} />
-          <fog attach="fog" args={["#ddd", 22, 35]} />
           <Suspense
             fallback={
               <Html fullscreen>
@@ -459,18 +443,36 @@ export default function ForestRoad() {
               </Html>
             }
           >
+            <directionalLight
+              castShadow
+              intensity={1}
+              position={[10, 6, 6]}
+              shadow-mapSize={[1024, 1024]}
+              color="#fff"
+            >
+              <orthographicCamera
+                attach="shadow-camera"
+                left={-20}
+                right={20}
+                top={20}
+                bottom={-20}
+              />
+            </directionalLight>
+            <color attach="background" args={["#dddddd"]} />
+            <CameraController enableDamping={true} dampingFactor={0.5} />
+            <fog attach="fog" args={["#ddd", 20, 40]} />
             <mesh position={[0, -1.05, 0]} rotation={[-Math.PI / 2, 0, 0]}>
               <planeGeometry args={[50, 50]} />
               <MeshReflectorMaterial
                 blur={[400, 100]}
                 resolution={2048}
-                mixBlur={1}
-                mixStrength={2.5}
+                mixBlur={0.1}
+                mixStrength={1}
                 depthScale={2}
                 minDepthThreshold={0.85}
-                color="#666"
+                color="#ccc"
                 distortion={0.5}
-                metalness={0.6}
+                metalness={0.8}
                 roughness={0.5}
               />
             </mesh>

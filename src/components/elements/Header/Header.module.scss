@@ -1,3 +1,4 @@
+@import "../../../styles/mixins";
 .header {
   display: block;
   p {
@@ -22,9 +23,15 @@
   margin: 10px;
   z-index: 500;
   transition: transform 1s ease-in-out;
+  @include for-phone-only {
+    padding: 25px 15px 25px 25px;
+  }
   p {
     color: var(--white);
     font-family: "IBM Plex Sans", sans-serif;
+    @include for-phone-only {
+      display: none;
+    }
   }
   i {
     font-size: 1rem;

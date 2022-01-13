@@ -1,5 +1,4 @@
 import styles from "./Loading.module.scss";
-import * as variants from "./Loading.motion";
 import { motion } from "framer-motion";
 
 function Loading() {

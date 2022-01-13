@@ -451,6 +451,24 @@ export default function Home() {
                       Amplitude Waveform
                     </Link>
                   </li>
+                  <li className={styles.tutorial}>
+                    <Link
+                      href="/p5/06_webgl_and_shaders"
+                      passHref
+                      scroll={false}
+                    >
+                      WebGL + Shaders
+                    </Link>
+                  </li>
+                  <li className={styles.tutorial}>
+                    <Link
+                      href="/p5/07_noise_and_shaders"
+                      passHref
+                      scroll={false}
+                    >
+                      Noise + Shaders
+                    </Link>
+                  </li>
                 </ul>
               </motion.article>
               <motion.article

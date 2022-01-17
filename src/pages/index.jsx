@@ -308,15 +308,6 @@ export default function Home() {
                       Forest Road Scene
                     </Link>
                   </li>
-                  <li className={styles.tutorial}>
-                    <Link
-                      href="/blender/models/forest-road-baked"
-                      passHref
-                      scroll={false}
-                    >
-                      Forest Road Baked
-                    </Link>
-                  </li>
                 </ul>
               </motion.article>
               <motion.article variants={articles} className={styles.block}>
@@ -509,6 +500,39 @@ export default function Home() {
                   <li>
                     <Link href="/cad/360-gopro-rig" passHref scroll={false}>
                       360 GoPro Rig
+                    </Link>
+                  </li>
+                </ul>
+              </motion.article>
+              <motion.article
+                variants={articles}
+                className={styles.block}
+                id={styles.fusion360}
+              >
+                <h2>DragonFrame</h2>
+                <ul>
+                  <li>
+                    <Link
+                      href="https://youtu.be/to7CT1D7nhg"
+                      passHref
+                      scroll={false}
+                    >
+                      <a target="_blank" rel="noreferrer">
+                        Unicorn Origami
+                        <i className={`material-icons-outlined`}>open_in_new</i>
+                      </a>
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      href="https://vimeo.com/487390693/4361ad42aa"
+                      passHref
+                      scroll={false}
+                    >
+                      <a target="_blank" rel="noreferrer">
+                        Google Cardboard Tour
+                        <i className={`material-icons-outlined`}>open_in_new</i>
+                      </a>
                     </Link>
                   </li>
                 </ul>

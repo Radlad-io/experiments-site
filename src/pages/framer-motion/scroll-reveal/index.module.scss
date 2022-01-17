@@ -1,37 +1,235 @@
 @import "../../../styles/mixins";
 
-.wapper {
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  width: 100vw;
+.intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 100vh;
-}
-
-.flex {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 100vw;
-  margin: 125px 0 0 0;
-  padding: 0;
-}
-
-.block {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  max-width: 600px;
-  height: 400px;
-  margin: 25px;
-  background-position: center;
-  background-size: cover;
-  p {
-    font-family: "IBM Plex Sans", monospace;
-    font-weight: 900;
+  background-color: var(--red-salsa);
+  h1 {
+    color: white;
     text-transform: uppercase;
-    font-size: 3rem;
-    color: var(--white);
+    text-align: right;
+    font-size: 1.75rem;
+    @include for-tablet-portrait-up {
+      font-size: 3rem;
+    }
+  }
+  p {
+    color: white;
+    text-align: center;
+    font-size: 0.875rem;
+    @include for-tablet-portrait-up {
+      font-size: 1.25rem;
+    }
+  }
+}
+
+#scroll {
+  color: white;
+  margin-top: -10vh;
+  text-align: center;
+  font-size: 1rem;
+  @include for-tablet-portrait-up {
+    font-size: 1.25rem;
+  }
+}
+
+.grid {
+  display: grid;
+  grid-gap: 0px;
+  grid-template-columns: repeat(1, 1fr);
+  padding: 0;
+  margin: 100px 0 0;
+  overflow-x: hidden;
+  @include for-tablet-portrait-up {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .block {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100vw;
+    padding: 50px 15px;
+    margin: 0;
+    font-family: "IBM Plex Sans", sans-serif;
+    @include for-tablet-portrait-up {
+      width: 50vw;
+      &:nth-of-type(even) {
+        align-items: center;
+      }
+    }
+    span {
+      display: block;
+      position: relative;
+      font-family: "IBM Plex Mono", serif;
+      font-size: 3rem;
+      font-weight: 400;
+      padding: 0;
+    }
+    blockquote {
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+      font-weight: 700;
+      max-width: 500px;
+    }
+    cite {
+      display: block;
+      font-size: 1.125rem;
+      font-weight: 400;
+      letter-spacing: 0.75px;
+      padding-top: 20px;
+    }
+    &:nth-of-type(odd) {
+      justify-content: flex-end;
+      align-items: center;
+      padding-bottom: 0;
+      @include for-tablet-portrait-up {
+        padding: 150px 15px;
+      }
+    }
+    &:nth-of-type(even) {
+      justify-content: flex-start;
+    }
+    &:nth-of-type(1) {
+      background-color: var(--white);
+      order: 1;
+    }
+    &:nth-of-type(2) {
+      background-color: var(--white);
+      order: 2;
+    }
+    &:nth-of-type(3) {
+      background-color: var(--red-salsa);
+      justify-content: flex-start;
+      order: 3;
+      @include for-tablet-portrait-up {
+        order: 4;
+      }
+    }
+    &:nth-of-type(4) {
+      background-color: var(--red-salsa);
+      justify-content: flex-end;
+      order: 4;
+      @include for-tablet-portrait-up {
+        order: 3;
+      }
+      span,
+      blockquote {
+        color: white;
+      }
+    }
+    &:nth-of-type(5) {
+      background-color: var(--white);
+      order: 5;
+    }
+    &:nth-of-type(6) {
+      background-color: var(--white);
+      order: 6;
+    }
+    &:nth-of-type(7) {
+      background-color: var(--red-salsa);
+      justify-content: flex-start;
+      order: 7;
+      @include for-tablet-portrait-up {
+        order: 8;
+      }
+    }
+    &:nth-of-type(8) {
+      background-color: var(--red-salsa);
+      justify-content: flex-end;
+      order: 8;
+      @include for-tablet-portrait-up {
+        order: 7;
+      }
+      span,
+      blockquote {
+        color: white;
+      }
+    }
+    &:nth-of-type(9) {
+      background-color: var(--white);
+      order: 9;
+    }
+    &:nth-of-type(10) {
+      background-color: var(--white);
+      order: 10;
+    }
+    &:nth-of-type(11) {
+      background-color: var(--red-salsa);
+      justify-content: flex-start;
+      order: 11;
+      @include for-tablet-portrait-up {
+        order: 12;
+      }
+    }
+    &:nth-of-type(12) {
+      background-color: var(--red-salsa);
+      justify-content: flex-end;
+      order: 12;
+      @include for-tablet-portrait-up {
+        order: 11;
+      }
+      span,
+      blockquote {
+        color: white;
+      }
+    }
+    &:nth-of-type(13) {
+      background-color: var(--white);
+      order: 13;
+    }
+    &:nth-of-type(14) {
+      background-color: var(--white);
+      order: 14;
+    }
+    &:nth-of-type(15) {
+      background-color: var(--red-salsa);
+      justify-content: flex-start;
+      order: 15;
+      @include for-tablet-portrait-up {
+        order: 16;
+      }
+    }
+    &:nth-of-type(16) {
+      background-color: var(--red-salsa);
+      justify-content: flex-end;
+      order: 16;
+      @include for-tablet-portrait-up {
+        order: 15;
+      }
+      span,
+      blockquote {
+        color: white;
+      }
+    }
+    &:nth-of-type(17) {
+      background-color: var(--white);
+      order: 17;
+    }
+    &:nth-of-type(18) {
+      background-color: var(--white);
+      order: 18;
+    }
+    &:nth-of-type(19) {
+      background-color: var(--red-salsa);
+      justify-content: flex-start;
+      order: 19;
+      @include for-tablet-portrait-up {
+        order: 20;
+      }
+    }
+    &:nth-of-type(20) {
+      background-color: var(--red-salsa);
+      justify-content: flex-end;
+      order: 20;
+      @include for-tablet-portrait-up {
+        order: 19;
+      }
+      span,
+      blockquote {
+        color: white;
+      }
+    }
   }
 }

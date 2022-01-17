@@ -13,7 +13,7 @@
     max-width: 650px;
     margin: 15px 25px;
     @include for-phone-only {
-      font-size: 1.5rem;
+      font-size: 1.125rem;
       text-align: left;
     }
   }
@@ -24,8 +24,8 @@
     margin: 10px 25px 35px;
     line-height: 1.75rem;
     @include for-phone-only {
-      font-size: 1rem;
-      line-height: 1.5rem;
+      font-size: 0.875rem;
+      line-height: 1.25rem;
     }
   }
   .modalBg {

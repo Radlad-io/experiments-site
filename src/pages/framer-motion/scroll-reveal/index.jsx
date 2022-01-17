@@ -190,7 +190,7 @@ export default function ScrollReveal() {
     const title = document.querySelector(".title");
     setInterval(() => {
       if (ran <= 10) {
-        title.innerHTML = `${words[ran - 1]} philosophers`;
+        title.innerHTML = `${words[ran - 1]} Quotes`;
         ran++;
       } else {
         clearInterval();
@@ -216,7 +216,7 @@ export default function ScrollReveal() {
             animate={"in"}
             exit={"out"}
           >
-            One Philosophers
+            Zero Quotes
           </motion.h1>
           <motion.p
             variants={titleVariant}
@@ -224,7 +224,7 @@ export default function ScrollReveal() {
             animate={"in"}
             exit={"out"}
           >
-            Quotes from notable philosophers
+            From notable philosophers
           </motion.p>
         </div>
       </motion.div>

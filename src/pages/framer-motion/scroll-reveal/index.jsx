@@ -204,7 +204,7 @@ export default function ScrollReveal() {
         title="Exploring Framer Motion"
         info="Framer Motion is a powerful motion library for React. I've created a few demos to become more familiar with it. This one is focused on hooking into the intersection observer to trigger an animation when an object is in the viewport. Being a react based library, Framer Motion allows for some advanced application animations. I.E. the full page transistions I've added to the entire site."
       >
-        <CodeLink link="https://github.com/Radlad-io/experiments-site/blob/main/src/pages/framer-motion/scroll-reveal/index.jsx" />
+        <CodeLink link="https://github.com/Radlad-io/experiments-site/tree/main/src/pages/framer-motion/scroll-reveal" />
       </Header>
 
       <motion.div className={styles.intro} variants={introVariant}>

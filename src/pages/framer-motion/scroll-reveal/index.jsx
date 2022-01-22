@@ -73,10 +73,12 @@ const svgVariant = {
   initial: {
     opacity: 0,
     x: -100,
+    rotate: -10,
   },
   in: {
     opacity: 1,
     x: 0,
+    rotate: 0,
     transition: {
       delay: 0.5,
       duration: 2,
@@ -95,11 +97,11 @@ const svgVariant = {
 const quoteVariant = {
   initial: {
     opacity: 0,
-    x: 35,
+    y: 35,
   },
   in: {
     opacity: 1,
-    x: 0,
+    y: 0,
     transition: {
       delay: 0.25,
       duration: 1.75,
@@ -108,7 +110,7 @@ const quoteVariant = {
   },
   out: {
     opacity: 0,
-    x: 35,
+    y: 35,
     transition: {
       duration: 1,
     },
@@ -224,7 +226,7 @@ export default function ScrollReveal() {
             animate={"in"}
             exit={"out"}
           >
-            From notable philosophers
+            From notable male philosophers
           </motion.p>
         </div>
       </motion.div>
@@ -237,18 +239,18 @@ export default function ScrollReveal() {
       >
         Scroll Down
       </motion.p>
-      <div className={styles.grid}>
+      <div className={styles.wrapper}>
         {philosophers.map((philosopher, index) => {
           return (
-            <>
-              <motion.div
-                key={index}
-                className={styles.block}
-                variants={blockVariant}
-                initial={"initial"}
-                whileInView={"in"}
-                viewport={{ amount: "some", once: false }}
-              >
+            <motion.div
+              className={styles.flex}
+              key={index}
+              variants={blockVariant}
+              initial={"initial"}
+              whileInView={"in"}
+              viewport={{ amount: "some", once: false }}
+            >
+              <div className={styles.block}>
                 <motion.div
                   variants={svgVariant}
                   initial={"initial"}
@@ -266,9 +268,8 @@ export default function ScrollReveal() {
                     width={600}
                   ></Image>
                 </motion.div>
-              </motion.div>
+              </div>
               <motion.div
-                key={`${index}Quote`}
                 className={styles.block}
                 variants={blockVariant}
                 initial={"initial"}
@@ -286,7 +287,7 @@ export default function ScrollReveal() {
                   <cite>{philosopher.name}</cite>
                 </motion.blockquote>
               </motion.div>
-            </>
+            </motion.div>
           );
         })}
       </div>

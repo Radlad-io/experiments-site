@@ -4,7 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 102vh;
   background-color: var(--red-salsa);
   h1 {
     color: white;
@@ -27,7 +27,7 @@
 
 #scroll {
   color: white;
-  margin-top: -10vh;
+  margin-top: -15vh;
   text-align: center;
   font-size: 1rem;
   @include for-tablet-portrait-up {
@@ -35,28 +35,55 @@
   }
 }
 
-.grid {
+.wrapper {
   display: grid;
   grid-gap: 0px;
   grid-template-columns: repeat(1, 1fr);
   padding: 0;
   margin: 100px 0 0;
-  overflow-x: hidden;
-  @include for-tablet-portrait-up {
-    grid-template-columns: repeat(2, 1fr);
+  // overflow-x: hidden;
+  .flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &:nth-of-type(even) {
+      background-color: var(--red-salsa);
+      color: white;
+    }
+    @include for-tablet-portrait-up {
+      &:nth-of-type(even) {
+        flex-direction: row-reverse;
+      }
+      &:nth-of-type(odd) {
+        flex-direction: row;
+      }
+      min-height: 85vh;
+    }
   }
   .block {
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
     width: 100vw;
     padding: 50px 15px;
     margin: 0;
     font-family: "IBM Plex Sans", sans-serif;
+    &:nth-of-type(even) {
+      justify-content: flex-start;
+      padding-top: 0;
+    }
+    &:nth-of-type(odd) {
+      padding-bottom: 0;
+    }
     @include for-tablet-portrait-up {
       width: 50vw;
+      &:nth-of-type(odd) {
+        align-items: center;
+        justify-content: flex-end;
+        padding: 50px 15px;
+      }
       &:nth-of-type(even) {
         align-items: center;
+        justify-content: flex-start;
+        padding: 50px 15px;
       }
     }
     span {
@@ -79,157 +106,6 @@
       font-weight: 400;
       letter-spacing: 0.75px;
       padding-top: 20px;
-    }
-    &:nth-of-type(odd) {
-      justify-content: flex-end;
-      align-items: center;
-      padding-bottom: 0;
-      @include for-tablet-portrait-up {
-        padding: 150px 15px;
-      }
-    }
-    &:nth-of-type(even) {
-      justify-content: flex-start;
-    }
-    &:nth-of-type(1) {
-      background-color: var(--white);
-      order: 1;
-    }
-    &:nth-of-type(2) {
-      background-color: var(--white);
-      order: 2;
-    }
-    &:nth-of-type(3) {
-      background-color: var(--red-salsa);
-      justify-content: flex-start;
-      order: 3;
-      @include for-tablet-portrait-up {
-        order: 4;
-      }
-    }
-    &:nth-of-type(4) {
-      background-color: var(--red-salsa);
-      justify-content: flex-end;
-      order: 4;
-      @include for-tablet-portrait-up {
-        order: 3;
-      }
-      span,
-      blockquote {
-        color: white;
-      }
-    }
-    &:nth-of-type(5) {
-      background-color: var(--white);
-      order: 5;
-    }
-    &:nth-of-type(6) {
-      background-color: var(--white);
-      order: 6;
-    }
-    &:nth-of-type(7) {
-      background-color: var(--red-salsa);
-      justify-content: flex-start;
-      order: 7;
-      @include for-tablet-portrait-up {
-        order: 8;
-      }
-    }
-    &:nth-of-type(8) {
-      background-color: var(--red-salsa);
-      justify-content: flex-end;
-      order: 8;
-      @include for-tablet-portrait-up {
-        order: 7;
-      }
-      span,
-      blockquote {
-        color: white;
-      }
-    }
-    &:nth-of-type(9) {
-      background-color: var(--white);
-      order: 9;
-    }
-    &:nth-of-type(10) {
-      background-color: var(--white);
-      order: 10;
-    }
-    &:nth-of-type(11) {
-      background-color: var(--red-salsa);
-      justify-content: flex-start;
-      order: 11;
-      @include for-tablet-portrait-up {
-        order: 12;
-      }
-    }
-    &:nth-of-type(12) {
-      background-color: var(--red-salsa);
-      justify-content: flex-end;
-      order: 12;
-      @include for-tablet-portrait-up {
-        order: 11;
-      }
-      span,
-      blockquote {
-        color: white;
-      }
-    }
-    &:nth-of-type(13) {
-      background-color: var(--white);
-      order: 13;
-    }
-    &:nth-of-type(14) {
-      background-color: var(--white);
-      order: 14;
-    }
-    &:nth-of-type(15) {
-      background-color: var(--red-salsa);
-      justify-content: flex-start;
-      order: 15;
-      @include for-tablet-portrait-up {
-        order: 16;
-      }
-    }
-    &:nth-of-type(16) {
-      background-color: var(--red-salsa);
-      justify-content: flex-end;
-      order: 16;
-      @include for-tablet-portrait-up {
-        order: 15;
-      }
-      span,
-      blockquote {
-        color: white;
-      }
-    }
-    &:nth-of-type(17) {
-      background-color: var(--white);
-      order: 17;
-    }
-    &:nth-of-type(18) {
-      background-color: var(--white);
-      order: 18;
-    }
-    &:nth-of-type(19) {
-      background-color: var(--red-salsa);
-      justify-content: flex-start;
-      order: 19;
-      @include for-tablet-portrait-up {
-        order: 20;
-      }
-    }
-    &:nth-of-type(20) {
-      background-color: var(--red-salsa);
-      justify-content: flex-end;
-      order: 20;
-      @include for-tablet-portrait-up {
-        order: 19;
-      }
-      span,
-      blockquote {
-        color: white;
-      }
     }
   }
 }

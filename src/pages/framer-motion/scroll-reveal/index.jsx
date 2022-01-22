@@ -11,13 +11,12 @@ const transition = { ease: [0.5, 0.01, -0.05, 0.9] };
 
 const introVariant = {
   initial: {
-    opacity: 0,
+    x: "-100vw",
   },
   in: {
-    opacity: 100,
+    x: 0,
     transition: {
-      duration: 2.75,
-      delayChildren: 0.75,
+      duration: 0.75,
     },
   },
   out: {
@@ -37,6 +36,7 @@ const titleVariant = {
     opacity: 1,
     y: 0,
     transition: {
+      delay: 0.75,
       duration: 2.75,
       ...transition,
     },
@@ -209,7 +209,13 @@ export default function ScrollReveal() {
         <CodeLink link="https://github.com/Radlad-io/experiments-site/tree/main/src/pages/framer-motion/scroll-reveal" />
       </Header>
 
-      <motion.div className={styles.intro} variants={introVariant}>
+      <motion.div
+        className={styles.intro}
+        variants={introVariant}
+        initial={"initial"}
+        animate={"in"}
+        exit={"out"}
+      >
         <div>
           <motion.h1
             className="title"
@@ -247,13 +253,17 @@ export default function ScrollReveal() {
               key={index}
               variants={blockVariant}
               initial={"initial"}
+              exit={"out"}
               whileInView={"in"}
               viewport={{ amount: "some", once: false }}
             >
-              <div className={styles.block}>
+              <div
+                className={index % 2 == 0 ? styles.block : styles.blockReverse}
+              >
                 <motion.div
                   variants={svgVariant}
                   initial={"initial"}
+                  exit={"out"}
                   whileInView={"in"}
                   viewport={{ amount: "some", once: false }}
                 >
@@ -270,15 +280,17 @@ export default function ScrollReveal() {
                 </motion.div>
               </div>
               <motion.div
-                className={styles.block}
+                className={index % 2 == 0 ? styles.block : styles.blockReverse}
                 variants={blockVariant}
                 initial={"initial"}
+                exit={"out"}
                 whileInView={"in"}
                 viewport={{ amount: "some", once: false }}
               >
                 <motion.blockquote
                   variants={quoteVariant}
                   initial={"initial"}
+                  exit={"out"}
                   whileInView={"in"}
                   viewport={{ amount: "some", once: false }}
                 >

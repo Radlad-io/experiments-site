@@ -36,7 +36,7 @@ const titleVariant = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: 0.75,
+      delay: 0.35,
       duration: 2.75,
       ...transition,
     },
@@ -190,21 +190,25 @@ export default function ScrollReveal() {
   ];
   useEffect(() => {
     const title = document.querySelector(".title");
-    setInterval(() => {
-      if (ran <= 10) {
-        title.innerHTML = `${words[ran - 1]} Quotes`;
-        ran++;
-      } else {
-        clearInterval();
-      }
-    }, [175 / ran]);
+    setTimeout(
+      () =>
+        setInterval(() => {
+          if (ran <= 10) {
+            title.innerHTML = `${words[ran - 1]} Quotes`;
+            ran++;
+          } else {
+            clearInterval();
+          }
+        }, [175 / ran]),
+      750
+    );
   });
 
   return (
     <>
       <Header
         title="Exploring Framer Motion"
-        info="Framer Motion is a powerful motion library for React. I've created a few demos to become more familiar with it. This one is focused on hooking into the intersection observer to trigger an animation when an object is in the viewport. Being a react based library, Framer Motion allows for some advanced application animations. I.E. the full page transistions I've added to the entire site."
+        info="Framer Motion is a powerful motion library for React. I've created a few demos to become more familiar with it. This one is focused on hooking into the intersection observer to trigger an animation when an object is in the viewport. Being a react based library, Framer Motion allows for some advanced application animations. I.E. the full page transistions I've added to the entire site. Thought I'd have some fun with a philosopher SVG pack I found on Etsy."
       >
         <CodeLink link="https://github.com/Radlad-io/experiments-site/tree/main/src/pages/framer-motion/scroll-reveal" />
       </Header>
@@ -232,7 +236,7 @@ export default function ScrollReveal() {
             animate={"in"}
             exit={"out"}
           >
-            From notable male philosophers
+            From notable philosophers
           </motion.p>
         </div>
       </motion.div>

@@ -132,11 +132,8 @@ export default function Home() {
                     </Link>
                   </li>
                   <li>
-                    <Link
-                      href="https://www.awwwards.com/academy/course/flawless-typography-understanding-and-breaking-the-rules"
-                      passHref
-                    >
-                      A typography course
+                    <Link href="https://polygonrunway.com/" passHref>
+                      Learning the ins and outs of Blender
                     </Link>
                   </li>
                   <li>

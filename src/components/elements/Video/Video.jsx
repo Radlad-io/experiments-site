@@ -1,10 +1,12 @@
-import CodeLink from "../CodeLink/CodeLink";
 import styles from "./Video.module.scss";
+import {motion} from 'framer-motion';
+;
+
 
 export default function Video() {
   return (
     <>
-      <div className={styles.wrapper}>
+      <motion.div className={styles.wrapper} initial={{opacity: 0}} animate={{opacity: 1, transition: {duration: .75}}} exit={{opacity: 0, transition: {duration: 0.75} }}>
         <video
           src="https://s3.blk.studio/Personal/Experiments/Blender/001/Blender_Physics%20001.mp4"
           autoPlay
@@ -13,12 +15,7 @@ export default function Video() {
           loop
           controls
         ></video>
-      </div>
-      <CodeLink
-        link={
-          "https://s3.blk.studio/Personal/Experiments/Blender/001/Physics_Cube_Wall.blend"
-        }
-      ></CodeLink>
+      </motion.div>
     </>
   );
 }

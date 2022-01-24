@@ -55,7 +55,7 @@ export default function DragAnimation() {
                 ]);
               }}
             >
-              <p>Drag me</p>
+              <p>Draggable</p>
             </motion.div>
           </div>
           <div className={styles.output}>

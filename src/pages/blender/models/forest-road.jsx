@@ -7,12 +7,9 @@ import { Canvas, useThree } from "@react-three/fiber";
 import {
   useGLTF,
   useTexture,
-  useHelper,
   Environment,
   MeshReflectorMaterial,
   Html,
-  MeshWobbleMaterial,
-  MeshDistortMaterial,
 } from "@react-three/drei";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
@@ -409,17 +406,6 @@ export default function ForestRoad() {
           performers better ray tracing but is not realtime. Similar visuals can
           be acheived in Three.js by baking lighting into the model.
         </p>
-        {/* <figure>
-          <Image
-            src={"/images/forest-road.png"}
-            height={550}
-            width={700}
-            objectFit="cover"
-          />
-          <figcaption>
-            Rendered image from Blender using cycles engine
-          </figcaption>
-        </figure> */}
         <CodeLink link="https://github.com/Radlad-io/experiments/tree/main/site/src/pages/blender/models/blender_files/forest-road" />
       </Header>
 
@@ -451,9 +437,9 @@ export default function ForestRoad() {
               bottom={-20}
             />
           </directionalLight>
-          <color attach="background" args={["#dddddd"]} />
+          <color attach="background" args={["#fff"]} />
           <CameraController enableDamping={true} dampingFactor={0.5} />
-          <fog attach="fog" args={["#ddd", 20, 40]} />
+          <fog attach="fog" args={["#fff", 20, 45]} />
           <Suspense
             fallback={
               <Html fullscreen>
@@ -471,13 +457,13 @@ export default function ForestRoad() {
                 mixStrength={1}
                 depthScale={2}
                 minDepthThreshold={0.85}
-                color="#ccc"
+                color="#474da1"
                 distortion={0.5}
                 metalness={0.8}
                 roughness={0.5}
               />
             </mesh>
-            <Environment preset="dawn" />
+            {/* <Environment preset="dawn" /> */}
             <Model />
           </Suspense>
         </Canvas>

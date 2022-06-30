@@ -161,6 +161,20 @@ export default function Home() {
                         </a>
                       </Link>
                     </li>
+                    <li className={styles.tutorial}>
+                      <Link
+                        href="https://github.com/Radlad-io/unreal-obstacle-assault/tree/master"
+                        passHref
+                        scroll={false}
+                      >
+                        <a target="_blank" rel="noreferrer">
+                          Obstacle Assualt
+                          <i className={`material-icons-outlined`}>
+                            open_in_new
+                          </i>
+                        </a>
+                      </Link>
+                    </li>
                   </ul>
                   <div className={styles.disclaimer}>
                     <i className={`material-icons-outlined`}>

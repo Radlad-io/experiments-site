@@ -1,0 +1,13 @@
+@import "../../styles/mixins";
+
+.frame {
+  position: fixed;
+  top: -95px;
+  z-index: -100;
+  width: 100vw;
+  height: 100vh;
+  border: none;
+  padding: 0;
+  margin: 95px 0px 25px 0px;
+  animation: 1.5s ease-out 0s 1 fadeUp;
+}
